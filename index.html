@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duolingo</title>
+    <!-- icons link -->
+    <!-- <a target="_blank" href="https://icons8.com/icon/kSWyz31baSeF/duolingo-logo"></a><a target="_blank" href="https://icons8.com"></a> -->
+    <!-- CSS link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="massage-card">
+            <div class="logo-pic">
+                <img src="icons8-duolingo-logo-200.png">
+            </div>
+            <div class="title">
+                <h1>The free, fun, and effective way to learn a language!</h1>
+            </div>
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email"  placeholder="Your Email" required>
+                <input type="text" id="phone"  placeholder="Phone Number" required>
+                <textarea id="massage" cols="30" rows="5" placeholder="your massage"></textarea>
+                <button type="submit" id="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+    SecureToken : "6fa95446-1679-4d89-bd75-ef26300448a1",
+    To : 'mariamazzer404@gmail.com',
+    From : "mariamazzer404@gmail.com",
+    Subject : "Contact With Duolingo",
+    Body : "name: " + document.getElementById("name").Value
+            + "<br> Email: " +  document.getElementById("email").Value
+            + "<br> Phone: " +  document.getElementById("phone").Value
+            + "<br> massage: " +  document.getElementById("massage").Value
+}).then(
+    message => alert("Massage Sent Succesfully")
+);
+        }
+    </script>
+</body>
+
+</html>
